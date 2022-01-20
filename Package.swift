@@ -28,6 +28,7 @@ let package = Package(
             dependencies: [],
             path: "SocketRocket",
             exclude: ["Resources/Info.plist"],
+            sources: [".", "SocketRocket.h"],
             publicHeadersPath: "SocketRocket"
         )
     ]
