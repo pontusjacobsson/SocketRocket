@@ -9,7 +9,14 @@
 // of patent rights can be found in the PATENTS file in the same directory.
 //
 
+#ifdef SWIFT_PACKAGE
+#import <../NSRunLoop+SRWebSocket.h>
+#import <../NSURLRequest+SRWebSocket.h>
+#import <../SRSecurityPolicy.h>
+#import <../SRWebSocket.h>
+#else
 #import <SocketRocket/NSRunLoop+SRWebSocket.h>
 #import <SocketRocket/NSURLRequest+SRWebSocket.h>
 #import <SocketRocket/SRSecurityPolicy.h>
 #import <SocketRocket/SRWebSocket.h>
+#endif
