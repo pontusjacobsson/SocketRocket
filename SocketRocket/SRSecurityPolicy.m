@@ -8,7 +8,12 @@
 //
 
 #import "SRSecurityPolicy.h"
+
+#ifdef SWIFT_PACKAGE
+#import "Internal/Security/SRPinningSecurityPolicy.h"
+#else
 #import "SRPinningSecurityPolicy.h"
+#endif
 
 NS_ASSUME_NONNULL_BEGIN
 

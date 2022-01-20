@@ -9,7 +9,11 @@
 
 #import "SRError.h"
 
+#ifdef SWIFT_PACKAGE
+#import "../../SRWebSocket.h"
+#else
 #import "SRWebSocket.h"
+#endif
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -9,11 +9,19 @@
 
 #import "SRProxyConnect.h"
 
+#ifdef SWIFT_PACKAGE
+#import "../../NSRunLoop+SRWebSocket.h"
+#import "../SRConstants.h"
+#import "../Utilities/SRError.h"
+#import "../Utilities/SRLog.h"
+#import "../Utilities/SRURLUtilities.h"
+#else
 #import "NSRunLoop+SRWebSocket.h"
 #import "SRConstants.h"
 #import "SRError.h"
 #import "SRLog.h"
 #import "SRURLUtilities.h"
+#endif
 
 @interface SRProxyConnect() <NSStreamDelegate>
 

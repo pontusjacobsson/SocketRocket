@@ -21,6 +21,27 @@
 
 #import <libkern/OSAtomic.h>
 
+#import "NSURLRequest+SRWebSocket.h"
+#import "NSRunLoop+SRWebSocket.h"
+#import "SRSecurityPolicy.h"
+
+#ifdef SWIFT_PACKAGE
+#import "Internal/Delegate/SRDelegateController.h"
+#import "Internal/IOConsumer/SRIOConsumer.h"
+#import "Internal/IOConsumer/SRIOConsumerPool.h"
+#import "Internal/Utilities/SRHash.h"
+#import "Internal/Utilities/SRURLUtilities.h"
+#import "Internal/Utilities/SRError.h"
+#import "Internal/Proxy/SRProxyConnect.h"
+#import "Internal/Utilities/SRHTTPConnectMessage.h"
+#import "Internal/Utilities/SRRandom.h"
+#import "Internal/Utilities/SRLog.h"
+#import "Internal/Utilities/SRMutex.h"
+#import "Internal/Utilities/SRSIMDHelpers.h"
+#import "Internal/NSURLRequest+SRWebSocketPrivate.h"
+#import "Internal/NSRunLoop+SRWebSocketPrivate.h"
+#import "Internal/SRConstants.h"
+#else
 #import "SRDelegateController.h"
 #import "SRIOConsumer.h"
 #import "SRIOConsumerPool.h"
@@ -39,6 +60,7 @@
 #import "NSURLRequest+SRWebSocketPrivate.h"
 #import "NSRunLoop+SRWebSocketPrivate.h"
 #import "SRConstants.h"
+#endif
 
 #if !__has_feature(objc_arc)
 #error SocketRocket must be compiled with ARC enabled

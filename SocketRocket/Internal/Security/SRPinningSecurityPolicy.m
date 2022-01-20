@@ -11,7 +11,11 @@
 
 #import <Foundation/Foundation.h>
 
+#ifdef SWIFT_PACKAGE
+#import "../Utilities/SRLog.h"
+#else
 #import "SRLog.h"
+#endif
 
 NS_ASSUME_NONNULL_BEGIN
 

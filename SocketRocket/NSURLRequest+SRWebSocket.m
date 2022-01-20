@@ -10,7 +10,11 @@
 //
 
 #import "NSURLRequest+SRWebSocket.h"
+#ifdef SWIFT_PACKAGE
+#import "Internal/NSURLRequest+SRWebSocketPrivate.h"
+#else
 #import "NSURLRequest+SRWebSocketPrivate.h"
+#endif
 
 // Required for object file to always be linked.
 void import_NSURLRequest_SRWebSocket() { }
